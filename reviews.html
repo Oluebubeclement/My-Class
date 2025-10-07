@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Reviews | TechSphere</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-grid">
+      <div class="brand">
+        <img src="https://i.imgur.com/GiwlyDX.png" alt="Logo" class="logo">
+        <h1 class="site-title">TechSphere Learning Academy</h1>
+      </div>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="courses.html">Courses</a>
+        <a href="gallery.html">Projects</a>
+        <a href="register.html" class="btn">Register</a>
+        <a href="reviews.html">Reviews</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h2>Student Reviews</h2>
+
+    <section class="reviews-list" id="reviewsList">
+      <p>Loading reviews…</p>
+    </section>
+
+    <section class="submit-review">
+      <h3>Submit a Review</h3>
+      <form id="reviewForm" class="form">
+        <label>
+          Name
+          <input name="name" type="text" />
+        </label>
+        <label>
+          Rating (1–5)
+          <input name="rating" type="number" min="1" max="5" />
+        </label>
+        <label>
+          Title
+          <input name="title" type="text" />
+        </label>
+        <label>
+          Comment
+          <textarea name="comment"></textarea>
+        </label>
+        <div class="form-actions">
+          <button class="btn" type="submit">Submit Review</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <script src="js/api.js"></script>
+  <script>
+    // Load reviews on page load
+    (async function loadReviews(){
+      try {
+        const res = await fetch(API_URL + "?action=getReviews");
+        const data = await res.json();
+        const container = document.getElementById('reviewsList');
+        if (!data || data.length === 0) {
+          container.innerHTML = "<p>No reviews yet — be the first to share your experience!</p>";
+          return;
+        }
+        container.innerHTML = data.map(r => `
+          <div class="review-card">
+            <h4>${escapeHtml(r.title || '')} <small>— ${escapeHtml(r.name || 'Anonymous')}</small></h4>
+            <p>${escapeHtml(r.comment || '')}</p>
+            <small>Rating: ${escapeHtml(r.rating || '')}/5</small>
+          </div>
+        `).join('');
+      } catch (err) {
+        console.error(err);
+      }
+    })();
+
+    // simple escape helper
+    function escapeHtml(s){ return String(s||'').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+  </script>
+
+  <script src="js/formHandler.js"></script>
+</body>
+</html>
