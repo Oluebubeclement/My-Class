@@ -1,49 +1,43 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Reviews — TechSphere</title>
-  <link rel="stylesheet" href="css/style.css">
-  <script src="js/main.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reviews | TechSphere Learning Academy</title>
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+<header>
   <nav class="navbar">
-    <div class="nav-left">
-      <img class="logo" src="https://i.imgur.com/GiwlyDX.png" alt="TechSphere logo">
-      <span class="brand">TechSphere Learning Academy</span>
-    </div>
+    <img src="https://i.imgur.com/GiwlyDX.png" alt="TechSphere Logo" class="logo" />
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="courses.html">Courses</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="register.html">Register</a></li>
+      <li><a href="projects.html">Projects</a></li>
       <li><a href="reviews.html" class="active">Reviews</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
+</header>
 
-  <main class="container">
-    <h1>Student Reviews</h1>
+<section class="review-section">
+  <h2>Share Your Experience</h2>
+  <form id="reviewForm">
+    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="email" name="email" placeholder="Your Email" required />
+    <textarea name="message" placeholder="Write your review..." required></textarea>
+    <input type="hidden" name="type" value="review" />
+    <button type="submit">Submit Review</button>
+  </form>
+</section>
 
-    <section class="reviews-section">
-      <div id="reviewsList" class="reviews-list">Loading reviews…</div>
+<footer>
+  <p>© 2025 TechSphere Learning Academy</p>
+</footer>
 
-      <h2>Leave a Review</h2>
-      <form id="reviewForm" class="form">
-        <label>Name<input name="name" type="text" placeholder="Your name"></label>
-        <label>Rating (1-5)<input name="rating" type="number" min="1" max="5" required></label>
-        <label>Comment<textarea name="comment" required placeholder="Share your experience..."></textarea></label>
-        <div class="form-actions">
-          <button type="submit" class="btn">Submit Review</button>
-        </div>
-      </form>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <p>© 2025 TechSphere Learning Academy</p>
-  </footer>
+<script src="assets/js/script.js"></script>
 </body>
 </html>
+
 

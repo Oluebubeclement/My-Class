@@ -1,86 +1,150 @@
-/* ---- Base ---- */
-:root{
-  --accent:#0b2239;
-  --accent-2:#0e6db9;
-  --muted:#6b7280;
-  --bg:#f6f8fb;
-  --card:#fff;
-  --radius:12px;
-  --maxw:1100px;
+* {
+  box-sizing: border-box;
 }
-*{box-sizing:border-box}
-body{margin:0;font-family:Inter,system-ui,Arial;color:#111;background:var(--bg)}
-.container{max-width:var(--maxw);margin:0 auto;padding:20px}
 
-/* ---- Navbar ---- */
-.navbar{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:12px 20px;
-  background:linear-gradient(90deg,var(--accent),var(--accent-2));
-  color:#fff;
-  position:sticky;
-  top:0;
-  z-index:50;
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #f4f7fb;
+  color: #333;
 }
-.nav-left{display:flex;align-items:center;gap:12px}
-.logo{height:48px;border-radius:8px}
-.brand{font-weight:700;font-size:1rem}
-.nav-links{display:flex;gap:16px;list-style:none;margin:0;padding:0}
-.nav-links a{color:#fff;text-decoration:none;font-weight:600;padding:6px 8px;border-radius:6px}
-.nav-links a.active, .nav-links a:hover{background:rgba(255,255,255,0.08)}
 
-/* ---- Hero ---- */
-.hero{padding:60px 20px;text-align:center;color:#fff;background:linear-gradient(135deg,#0e3a6e,#042b4a);border-radius:12px;margin:20px 0}
-.hero h1{font-size:clamp(1.4rem,3vw,2.4rem);margin:0 0 10px}
-.hero p{margin:0 0 18px;color:rgba(255,255,255,0.9)}
-.btn{background:#f0b429;color:#081028;padding:10px 16px;border-radius:8px;text-decoration:none;font-weight:700;display:inline-block}
-.btn.small{padding:8px 12px;font-size:0.9rem}
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #002b5b;
+  padding: 15px 40px;
+}
 
-/* ---- Cards ---- */
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:24px}
-.card{background:var(--card);padding:18px;border-radius:10px;box-shadow:0 8px 30px rgba(12,20,40,0.06)}
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
 
-/* ---- About ---- */
-.about-hero{padding:40px 20px;text-align:center;border-radius:12px;background:linear-gradient(135deg,#0b2239,#122f4a);color:#fff;margin:20px 0}
-.about-hero-inner{display:inline-block;background:rgba(0,0,0,0.15);padding:28px;border-radius:10px}
-.about-content{display:flex;gap:30px;align-items:flex-start;margin:30px 0;flex-wrap:wrap}
-.coach-profile{text-align:center;flex:1 1 300px}
-.coach-profile img{width:240px;height:240px;border-radius:50%;object-fit:cover;border:6px solid #f0b429;box-shadow:0 8px 30px rgba(0,0,0,0.12)}
-.coach-profile h2{margin:14px 0 6px;font-size:1.4rem;color:var(--accent)}
-.coach-profile .title{color:var(--muted);font-style:italic}
-.about-text{flex:2 1 480px;background:var(--card);padding:24px;border-radius:12px;box-shadow:0 8px 30px rgba(12,20,40,0.06)}
-.about-text p{line-height:1.7;color:#222}
-.about-text ul{padding-left:20px}
-.about-text h3{color:var(--accent)}
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
 
-/* ---- Forms ---- */
-.form{display:flex;flex-direction:column;gap:10px;max-width:720px}
-.form label{display:flex;flex-direction:column;font-weight:600}
-.form input,.form textarea{padding:10px;border-radius:8px;border:1px solid #e6e9ee;margin-top:6px}
-.form textarea{min-height:120px;resize:vertical}
-.form-actions{margin-top:8px}
+.navbar a.active, .navbar a:hover {
+  color: #ffcc00;
+}
 
-/* ---- Courses / Cards ---- */
-.course-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
-.course-card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 8px 30px rgba(12,20,40,0.06)}
+/* Hero */
+.hero {
+  background: linear-gradient(120deg, #002b5b, #0056b3);
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+}
 
-/* ---- Gallery ---- */
-.gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin-top:14px}
-.gallery-grid img{width:100%;height:auto;border-radius:10px;box-shadow:0 8px 20px rgba(0,0,0,0.06);transition:transform .18s}
-.gallery-grid img:hover{transform:scale(1.03)}
+.hero .btn {
+  background: #ffcc00;
+  color: #002b5b;
+  padding: 12px 25px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+}
 
-/* ---- Reviews ---- */
-.reviews-list{display:grid;gap:12px}
-.review-card{background:var(--card);padding:12px;border-radius:10px;box-shadow:0 6px 18px rgba(12,20,40,0.05)}
+/* About */
+.about-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: center;
+  padding: 60px;
+  background: white;
+}
 
-/* ---- Footers ---- */
-.site-footer{padding:16px;text-align:center;color:#fff;background:linear-gradient(90deg,var(--accent),var(--accent-2));margin-top:28px;border-top-left-radius:12px;border-top-right-radius:12px}
+.about-image img {
+  border-radius: 20px;
+  width: 250px;
+}
 
-/* ---- Responsive ---- */
-@media (max-width:880px){
-  .nav-links{display:none} /* hide full nav on small screens; simple approach */
-  .navbar{flex-wrap:wrap;gap:12px}
-  .about-content{flex-direction:column;align-items:center}
+.about-image h3 {
+  color: #002b5b;
+}
+
+/* Courses */
+.courses {
+  text-align: center;
+  padding: 50px;
+}
+
+.course-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.course {
+  background: white;
+  padding: 20px;
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Projects */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  padding: 30px;
+}
+
+.gallery img {
+  width: 220px;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* Contact */
+.contact {
+  text-align: center;
+  padding: 60px;
+  background: white;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 0 auto;
+  gap: 10px;
+}
+
+input, textarea, button {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+button {
+  background: #002b5b;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+footer {
+  text-align: center;
+  padding: 15px;
+  background: #002b5b;
+  color: white;
 }
