@@ -3,67 +3,49 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Register | TechSphere</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <title>Register — TechSphere</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-grid">
-      <div class="brand">
-        <img src="https://i.imgur.com/GiwlyDX.png" alt="Logo" class="logo">
-        <h1 class="site-title">TechSphere Learning Academy</h1>
-      </div>
-      <nav class="main-nav">
-        <a href="index.html">Home</a>
-        <a href="courses.html">Courses</a>
-        <a href="gallery.html">Projects</a>
-        <a href="register.html" class="btn">Register</a>
-        <a href="reviews.html">Reviews</a>
-      </nav>
+  <nav class="navbar">
+    <div class="nav-left">
+      <img class="logo" src="https://i.imgur.com/GiwlyDX.png" alt="TechSphere logo">
+      <span class="brand">TechSphere Learning Academy</span>
     </div>
-  </header>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="courses.html">Courses</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="register.html" class="active">Register</a></li>
+      <li><a href="reviews.html">Reviews</a></li>
+    </ul>
+  </nav>
 
   <main class="container">
-    <h2>Register</h2>
-    <form id="registerForm" class="form">
-      <label>
-        Full Name
-        <input name="name" type="text" required />
-      </label>
-
-      <label>
-        Email
-        <input name="email" type="email" required />
-      </label>
-
-      <label>
-        Phone
-        <input name="phone" type="tel" required />
-      </label>
-
-      <label>
-        Course (choose)
-        <input name="course" type="text" required placeholder="e.g. No-Code Automation" />
-      </label>
-
-      <label>
-        Payment Reference (optional)
-        <input name="paymentReference" type="text" placeholder="e.g. UBA transfer reference" />
-      </label>
-
+    <h1>Register for a Course</h1>
+    <form id="registrationForm" class="form">
+      <label>Full Name<input name="name" type="text" required></label>
+      <label>Email<input name="email" type="email" required></label>
+      <label>Course<input name="course" type="text" required placeholder="e.g. No-Code Automation"></label>
+      <label>Payment Reference (from bank transfer)<input name="paymentRef" type="text" required placeholder="UBA transfer reference"></label>
+      <label>Phone<input name="phone" type="tel" required></label>
       <div class="form-actions">
         <button type="submit" class="btn">Submit Registration</button>
       </div>
     </form>
 
     <aside class="note">
-      <h4>Payment Info</h4>
+      <h3>Payment Info</h3>
       <p><strong>Bank:</strong> UBA Plc<br><strong>Account Name:</strong> Oluebube Ekene Clement<br><strong>Account Number:</strong> 2304842193</p>
-      <p>After making payment: send proof on WhatsApp or click the "Join WhatsApp Group" link that appears after registration.</p>
+      <p>After payment, you will see a link to join our WhatsApp group for students.</p>
     </aside>
   </main>
 
-  <script src="js/api.js"></script>
-  <script src="js/formHandler.js"></script>
+  <footer class="site-footer">
+    <p>© 2025 TechSphere Learning Academy</p>
+  </footer>
 </body>
 </html>
+

@@ -3,87 +3,47 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Reviews | TechSphere</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <title>Reviews — TechSphere</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-grid">
-      <div class="brand">
-        <img src="https://i.imgur.com/GiwlyDX.png" alt="Logo" class="logo">
-        <h1 class="site-title">TechSphere Learning Academy</h1>
-      </div>
-      <nav class="main-nav">
-        <a href="index.html">Home</a>
-        <a href="courses.html">Courses</a>
-        <a href="gallery.html">Projects</a>
-        <a href="register.html" class="btn">Register</a>
-        <a href="reviews.html">Reviews</a>
-      </nav>
+  <nav class="navbar">
+    <div class="nav-left">
+      <img class="logo" src="https://i.imgur.com/GiwlyDX.png" alt="TechSphere logo">
+      <span class="brand">TechSphere Learning Academy</span>
     </div>
-  </header>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="courses.html">Courses</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="register.html">Register</a></li>
+      <li><a href="reviews.html" class="active">Reviews</a></li>
+    </ul>
+  </nav>
 
   <main class="container">
-    <h2>Student Reviews</h2>
+    <h1>Student Reviews</h1>
 
-    <section class="reviews-list" id="reviewsList">
-      <p>Loading reviews…</p>
-    </section>
+    <section class="reviews-section">
+      <div id="reviewsList" class="reviews-list">Loading reviews…</div>
 
-    <section class="submit-review">
-      <h3>Submit a Review</h3>
+      <h2>Leave a Review</h2>
       <form id="reviewForm" class="form">
-        <label>
-          Name
-          <input name="name" type="text" />
-        </label>
-        <label>
-          Rating (1–5)
-          <input name="rating" type="number" min="1" max="5" />
-        </label>
-        <label>
-          Title
-          <input name="title" type="text" />
-        </label>
-        <label>
-          Comment
-          <textarea name="comment"></textarea>
-        </label>
+        <label>Name<input name="name" type="text" placeholder="Your name"></label>
+        <label>Rating (1-5)<input name="rating" type="number" min="1" max="5" required></label>
+        <label>Comment<textarea name="comment" required placeholder="Share your experience..."></textarea></label>
         <div class="form-actions">
-          <button class="btn" type="submit">Submit Review</button>
+          <button type="submit" class="btn">Submit Review</button>
         </div>
       </form>
     </section>
   </main>
 
-  <script src="js/api.js"></script>
-  <script>
-    // Load reviews on page load
-    (async function loadReviews(){
-      try {
-        const res = await fetch(API_URL + "?action=getReviews");
-        const data = await res.json();
-        const container = document.getElementById('reviewsList');
-        if (!data || data.length === 0) {
-          container.innerHTML = "<p>No reviews yet — be the first to share your experience!</p>";
-          return;
-        }
-        container.innerHTML = data.map(r => `
-          <div class="review-card">
-            <h4>${escapeHtml(r.title || '')} <small>— ${escapeHtml(r.name || 'Anonymous')}</small></h4>
-            <p>${escapeHtml(r.comment || '')}</p>
-            <small>Rating: ${escapeHtml(r.rating || '')}/5</small>
-          </div>
-        `).join('');
-      } catch (err) {
-        console.error(err);
-      }
-    })();
-
-    // simple escape helper
-    function escapeHtml(s){ return String(s||'').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
-  </script>
-
-  <script src="js/formHandler.js"></script>
+  <footer class="site-footer">
+    <p>© 2025 TechSphere Learning Academy</p>
+  </footer>
 </body>
 </html>
+
