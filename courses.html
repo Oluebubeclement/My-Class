@@ -1,48 +1,55 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Courses | TechSphere Learning Academy</title>
-  <link rel="stylesheet" href="assets/css/style.css">
-</head>
+<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Courses | TechSphere</title>
+<link rel="stylesheet" href="assets/styles.css" /></head>
 <body>
-<header>
-  <nav class="navbar">
-    <img src="https://i.imgur.com/GiwlyDX.png" alt="TechSphere Logo" class="logo" />
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="courses.html" class="active">Courses</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="reviews.html">Reviews</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
+<header class="header">
+  <div class="container">
+    <div style="display:flex;align-items:center;gap:12px">
+      <img src="https://i.imgur.com/GiwlyDX.png" class="logo">
+      <div style="font-weight:800">TechSphere Learning Academy</div>
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="register.html">Register</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
 </header>
 
-<section class="courses">
-  <h2>Our Popular Courses</h2>
-  <div class="course-list">
-    <div class="course">
-      <h3>No-Code Workflow Automation</h3>
-      <p>Master ClickUp, Monday.com, Airtable, and Zapier to automate business processes.</p>
+<main class="container">
+  <h1>Courses</h1>
+  <div class="grid">
+    <div class="card">
+      <h3>No-Code / Automation</h3>
+      <p>Learn Zapier, Make (Integromat), Airtable, Google Apps Script basics and build real automation projects for businesses.</p>
+      <p><strong>Duration:</strong> 4 weeks • <strong>Level:</strong> Beginner → Intermediate</p>
+      <a href="register.html">Register →</a>
     </div>
-    <div class="course">
-      <h3>Cloud Security & DevOps</h3>
-      <p>Learn AWS, CI/CD, and cloud best practices for modern infrastructure.</p>
+    <div class="card">
+      <h3>Cloud Security / DevOps</h3>
+      <p>Fundamentals of cloud, containerization basics, CI/CD pipelines and security best practices for beginners.</p>
+      <p><strong>Duration:</strong> 6 weeks • <strong>Level:</strong> Beginner → Intermediate</p>
+      <a href="register.html">Register →</a>
     </div>
-    <div class="course">
-      <h3>Digital Productivity Tools</h3>
-      <p>Get hands-on with Google Workspace, Microsoft 365, and project collaboration tools.</p>
+    <div class="card">
+      <h3>Freelance & Remote Work</h3>
+      <p>Build a portfolio, find clients, price your services and scale your freelance business with remote-first strategies.</p>
+      <a href="register.html">Register →</a>
     </div>
   </div>
-</section>
+</main>
 
-<footer>
-  <p>© 2025 TechSphere Learning Academy</p>
-</footer>
+<footer class="footer"><div class="container">© 2025 TechSphere Learning Academy</div></footer>
+<script src="assets/script.js"></script>
 </body>
 </html>
+
 
 

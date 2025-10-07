@@ -1,42 +1,82 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>TechSphere Learning Academy</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/styles.css" />
 </head>
 <body>
-  <header>
-    <nav class="navbar">
-      <img src="https://i.imgur.com/GiwlyDX.png" alt="TechSphere Logo" class="logo" />
-      <ul class="nav-links">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="courses.html">Courses</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="reviews.html">Reviews</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
+  <header class="header">
+    <div class="container">
+      <div style="display:flex;align-items:center;gap:12px">
+        <img src="https://i.imgur.com/GiwlyDX.png" alt="TechSphere Logo" class="logo">
+        <div style="font-weight:800">TechSphere Learning Academy</div>
+      </div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="reviews.html">Reviews</a></li>
+          <li><a href="register.html">Register</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <button class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+      </nav>
+    </div>
   </header>
 
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Empowering Africa’s Digital Future</h1>
-      <p>Learn in-demand tech skills and transform your career with TechSphere Learning Academy.</p>
-      <a href="courses.html" class="btn">Explore Courses</a>
+  <main>
+    <section class="hero container">
+      <div class="left">
+        <h1>Learn practical tech skills that open global opportunities</h1>
+        <p>At TechSphere, we believe technology is for everyone ready to grow. Join interactive classes, build real projects and connect to freelance & remote job opportunities.</p>
+        <a class="cta" href="register.html">Join Now</a>
+      </div>
+      <div class="right" style="max-width:360px">
+        <img src="https://i.imgur.com/DQLdJph.png" alt="Lead Coach" style="width:100%;border-radius:12px;box-shadow:0 8px 30px rgba(2,6,23,0.08)">
+        <p style="margin-top:8px"><strong>Lead Coach:</strong> Oluebube Ekene Clement</p>
+      </div>
+    </section>
+
+    <div class="container">
+      <h2 style="margin-top:18px">Popular Courses</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>No-Code / Automation</h3>
+          <p>Build workflows, automate tasks, and launch apps without code. Real projects & portfolio.</p>
+          <a href="courses.html">Learn more →</a>
+        </div>
+        <div class="card">
+          <h3>Cloud Security / DevOps</h3>
+          <p>Foundations of cloud, security basics and CI/CD to help you launch a tech career.</p>
+          <a href="courses.html">Learn more →</a>
+        </div>
+        <div class="card">
+          <h3>Freelance & Remote Work</h3>
+          <p>How to package skills, find gigs, get clients, and scale your income online.</p>
+          <a href="register.html">Register →</a>
+        </div>
+      </div>
     </div>
-  </section>
 
-  <section class="intro">
-    <h2>Why Choose TechSphere?</h2>
-    <p>We teach practical skills that help you thrive in the global tech economy—whether you’re a beginner or a professional.</p>
-  </section>
+    <section class="container" style="margin-top:30px">
+      <h2>Student Reviews</h2>
+      <div id="reviewsList"></div>
+      <p><a href="reviews.html">See all reviews & add yours</a></p>
+    </section>
 
-  <footer>
-    <p>© 2025 TechSphere Learning Academy | Designed by Oluebube Ekene Clement</p>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 TechSphere Learning Academy • UBA Plc — 2304842193 — Oluebube Ekene Clement</p>
+    </div>
   </footer>
+
+  <script src="assets/script.js"></script>
 </body>
 </html>
 

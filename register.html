@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Register | TechSphere</title>
+<link rel="stylesheet" href="assets/styles.css" /></head>
+<body>
+<header class="header">
+  <div class="container">
+    <div style="display:flex;align-items:center;gap:12px">
+      <img src="https://i.imgur.com/GiwlyDX.png" class="logo">
+      <div style="font-weight:800">TechSphere</div>
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="register.html">Register</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <h1>Register for a Course</h1>
+  <form id="registerForm">
+    <input name="name" placeholder="Full name" required>
+    <input name="email" type="email" placeholder="Email" required>
+    <input name="phone" placeholder="Phone (optional)">
+    <select name="course" required>
+      <option value="">Select Course</option>
+      <option value="No-Code / Automation">No-Code / Automation</option>
+      <option value="Cloud Security / DevOps">Cloud Security / DevOps</option>
+      <option value="Freelance & Remote Work">Freelance & Remote Work</option>
+    </select>
+    <input name="amount" placeholder="Amount (NGN) - optional">
+    <p><strong>Payment (Bank Transfer):</strong><br>UBA Plc — 2304842193 — Oluebube Ekene Clement</p>
+    <label><input type="checkbox" name="paid"> I have paid and I want to join the WhatsApp group now</label>
+    <button type="submit">Submit Registration</button>
+  </form>
+</main>
+
+<footer class="footer"><div class="container">© 2025 TechSphere Learning Academy</div></footer>
+<script src="assets/script.js"></script>
+</body>
+</html>
